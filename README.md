@@ -83,50 +83,6 @@ while True:
 3. Weather and crypto queries will call the respective APIs.
 
 
-Below is the architecture on how the system actually works.
-
-Groq Chat Agent - Architecture
-       +-----------------+
-       |  User Input     |
-       +--------+--------+
-                |
-                v
-       +--------+--------+
-       |  Save message   |
-       |  (SQLite DB)    |
-       +--------+--------+
-                |
-                v
-       +--------+--------+
-       | Load last N msgs|
-       | from DB          |
-       +--------+--------+
-                |
-                v
-       +--------+--------+
-       |  Groq Agent     |
-       |  + Tools        |
-       +--------+--------+
-        |             |
-        v             v
-   get_weather()    get_crypto_price()
-        |             |
-        v             v
-   Weather API      CoinGecko API
-   (OpenWeather)    
-        \             /
-         \           /
-          \         /
-           +-------+
-           | Response
-           | (Assistant)
-           +-------+
-                |
-                v
-       +--------+--------+
-       | Save response    |
-       | to DB            |
-       +-----------------+
 
 ## Flow Summary
 
