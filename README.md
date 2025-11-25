@@ -5,13 +5,9 @@ This project implements a Groq-powered conversational agent that can answer gene
 Features
 
 1.General question answering via Groq LLM.
-
 2.Weather queries using OpenWeatherMap API.
-
-3.Cryptocurrency price queries using CoinGecko API.
-
+3.Cryptocurrency price queries using CoinMarketCap API key.
 4.Persistent conversation history in SQLite.
-
 5.Supports multiple conversations using conversation_id.
 
 
@@ -22,7 +18,6 @@ Python 3.10+
 pip install -r requirements.txt
 
 Example requirements.txt:
-
 python-dotenv
 requests
 langchain-groq
@@ -48,22 +43,16 @@ Install python-dotenv (already in requirements) so keys are automatically loaded
 
 The project uses a database to store conversation history.
 
-The database is automatically created by running:
+The database is automatically created by running below line of code:
 
 from db_utils import init_db
 init_db()
 
-
 This will create chat_history.db with a table messages containing:
-
 id (primary key)
-
 conversation_id
-
 role (user/assistant)
-
 content
-
 timestamp
 
 4. Run a Sample Chat Session
@@ -87,16 +76,9 @@ while True:
 
 
 Features of this chat session:
-
-Conversation is persistent across restarts.
-
-Last N messages are loaded automatically to provide context.
-
-Weather and crypto queries will call the respective APIs.
-
-
-
-
+1.Conversation is persistent across restarts.
+2.Last N messages are loaded automatically to provide context.
+3.Weather and crypto queries will call the respective APIs.
 
 Below is the architecture on how the system actually works.
 
@@ -148,15 +130,10 @@ Groq Chat Agent - Architecture
 Flow Summary:
 
 1.User sends a query.
-
 2.Query is saved to SQLite DB.
-
 3.Last N messages for the conversation are loaded.
-
 4.Agent decides whether to answer directly or use tools.
-
 5.Tools call external APIs as needed.
-
-6.Agent response is saved to DB.
-
+6.Agent response is saved to database.
 7.Agent response returned to the user.
+8.In successive query,the previous conversation gets persisted in db.
