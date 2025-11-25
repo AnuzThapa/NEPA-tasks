@@ -1,6 +1,6 @@
-# Groq Based Chat Agent - Architecture      
-
-
+Groq Chat Agent - Architecture
+```
+       +-----------------+
        |  User Input     |
        +--------+--------+
                 |
@@ -41,3 +41,4 @@
        | Save response    |
        | to DB            |
        +-----------------+
+```
