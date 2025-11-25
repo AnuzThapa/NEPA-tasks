@@ -87,6 +87,7 @@ while True:
 1. Conversation is persistent across restarts.
 2. Last N messages are loaded automatically to provide context.
 3. Weather and crypto queries will call the respective APIs.
+4. The agent can recall previous conversation and use it to provide context-aware responses, allowing follow-up questions to be answered accurately across multiple sessions.
 
 
 
