@@ -47,18 +47,19 @@ The database is automatically created by running below line of code:
 
 from db_utils import init_db
 init_db()
+This will create `chat_history.db` with a table `messages` containing:
 
-This will create chat_history.db with a table messages containing:
-id (primary key)
-conversation_id
-role (user/assistant)
-content
-timestamp
+- `id` (primary key)  
+- `conversation_id`  
+- `role` (user/assistant)  
+- `content`  
+- `timestamp`
 
 4. Run a Sample Chat Session
 
 You can interact with the agent using a Python loop:
 
+```python
 from agent_with_db import SimpleAgentWithDB
 
 agent = SimpleAgentWithDB()
@@ -73,16 +74,17 @@ while True:
 
     response = agent.query(user_input, conversation_id)
     print(f"Assistant: {response}\n")
+```
 
+## Features of this chat session
 
-## Features of this chat session:
-1.Conversation is persistent across restarts.
-2.Last N messages are loaded automatically to provide context.
-3.Weather and crypto queries will call the respective APIs.
+1. Conversation is persistent across restarts.
+2. Last N messages are loaded automatically to provide context.
+3. Weather and crypto queries will call the respective APIs.
+
 
 Below is the architecture on how the system actually works.
 
-ARCHITECTURE.md (Optional)
 Groq Chat Agent - Architecture
        +-----------------+
        |  User Input     |
@@ -126,14 +128,13 @@ Groq Chat Agent - Architecture
        | to DB            |
        +-----------------+
 
+## Flow Summary
 
-## Flow Summary:
-
-1.User sends a query.
-2.Query is saved to SQLite DB.
-3.Last N messages for the conversation are loaded.
-4.Agent decides whether to answer directly or use tools.
-5.Tools call external APIs as needed.
-6.Agent response is saved to database.
-7.Agent response returned to the user.
-8.In successive query,the previous conversation gets persisted in db.
+1. User sends a query.
+2. Query is saved to SQLite DB.
+3. Last N messages for the conversation are loaded.
+4. Agent decides whether to answer directly or use tools.
+5. Tools call external APIs as needed.
+6. Agent response is saved to the database.
+7. Agent response is returned to the user.
+8. In successive queries, the previous conversation gets persisted in the DB.
