@@ -1,4 +1,4 @@
-*Groq Chat Agent with Persistent Conversation
+# Groq Chat Agent with Persistent Conversation
 
 This project implements a Groq-powered conversational agent that can answer general questions and use external tools for weather and cryptocurrency price queries. All conversation history is stored in a SQLite database, allowing follow-up questions to work across restarts.
 
@@ -28,13 +28,13 @@ pip install -r requirements.txt
 
 Create a .env file in the root directory with your API keys:
 
-# Groq API key
+## Groq API key
 GROQ_API_KEY="your_groq_api_key_here"
 
-# OpenWeatherMap API key
+## OpenWeatherMap API key
 OPENWEATHER_API_KEY="your_openweathermap_api_key_here"
 
-# CoinMarketCap API Key
+## CoinMarketCap API Key
 CMC_API_KEY="your_cmc_api_key_here"
 
 
