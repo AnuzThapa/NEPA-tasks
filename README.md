@@ -17,11 +17,12 @@ Python 3.10+
 
 pip install -r requirements.txt
 
-Example requirements.txt:
-python-dotenv
-requests
-langchain-groq
-sqlite3
+## Example requirements.txt:
+
+1. python-dotenv
+2. requests
+3. langchain-groq
+4. sqlite3
 
 2. Configure External APIs
 
@@ -37,16 +38,17 @@ OPENWEATHER_API_KEY="your_openweathermap_api_key_here"
 CMC_API_KEY="your_cmc_api_key_here"
 
 
-Install python-dotenv (already in requirements) so keys are automatically loaded.
+### Install python-dotenv (already in requirements) so keys are automatically loaded.
 
 3. Initialize the SQLite Database
 
 The project uses a database to store conversation history.
 
 The database is automatically created by running below line of code:
-
+```python
 from db_utils import init_db
 init_db()
+```
 This will create `chat_history.db` with a table `messages` containing:
 
 - `id` (primary key)  
@@ -57,6 +59,10 @@ This will create `chat_history.db` with a table `messages` containing:
 
 4. Run a Sample Chat Session
 
+```python
+# begin the program with below code.
+python agent.py
+```
 You can interact with the agent using a Python loop:
 
 ```python
@@ -94,3 +100,5 @@ while True:
 6. Agent response is saved to the database.
 7. Agent response is returned to the user.
 8. In successive queries, the previous conversation gets persisted in the DB.
+
+   
