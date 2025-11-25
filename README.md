@@ -2,13 +2,13 @@
 
 This project implements a Groq-powered conversational agent that can answer general questions and use external tools for weather and cryptocurrency price queries. All conversation history is stored in a SQLite database, allowing follow-up questions to work across restarts.
 
-Features
+## Features
 
-1.General question answering via Groq LLM.
-2.Weather queries using OpenWeatherMap API.
-3.Cryptocurrency price queries using CoinMarketCap API key.
-4.Persistent conversation history in SQLite.
-5.Supports multiple conversations using conversation_id.
+1. General question answering via Groq LLM.
+2. Weather queries using OpenWeatherMap API.
+3. Cryptocurrency price queries using CoinMarketCap API key.
+4. Persistent conversation history in SQLite.
+5. Supports multiple conversations using conversation_id.
 
 
 *Below are the Prerequisites
@@ -75,7 +75,7 @@ while True:
     print(f"Assistant: {response}\n")
 
 
-Features of this chat session:
+## Features of this chat session:
 1.Conversation is persistent across restarts.
 2.Last N messages are loaded automatically to provide context.
 3.Weather and crypto queries will call the respective APIs.
@@ -127,7 +127,7 @@ Groq Chat Agent - Architecture
        +-----------------+
 
 
-Flow Summary:
+## Flow Summary:
 
 1.User sends a query.
 2.Query is saved to SQLite DB.
