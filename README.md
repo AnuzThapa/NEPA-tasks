@@ -17,11 +17,12 @@ Python 3.10+
 
 pip install -r requirements.txt
 
-Example requirements.txt:
-python-dotenv
-requests
-langchain-groq
-sqlite3
+## Example requirements.txt:
+
+1. python-dotenv
+2. requests
+3. langchain-groq
+4. sqlite3
 
 2. Configure External APIs
 
