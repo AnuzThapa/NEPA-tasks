@@ -38,7 +38,7 @@ GROQ_API_KEY="your_groq_api_key_here"
 # OpenWeatherMap API key
 OPENWEATHER_API_KEY="your_openweathermap_api_key_here"
 
-# Optional: CoinMarketCap API key (if using CMC instead of CoinGecko)
+#CoinMarketCap API Key
 CMC_API_KEY="your_cmc_api_key_here"
 
 
